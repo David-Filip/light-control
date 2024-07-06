@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scheduler</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="v-center"><h3>Status: <%= lightsOn ? "ON":"OFF" %></h3></div>
+        <form action="/toggle" method="post" class="v-center">
+            <input
+            name="toggle_btn"
+            type="submit"
+            value="Quick toggle"
+            class="base_btn2 <%= lightsOn ? "btn_light":"btn_dark" %>"
+            />
+        </form>
+    </header>
+    
+    <div class="items">
+        <h1 class="schedule-mg-t">SCHEDULE</h1>
+        <hr>
+        <% for (let i = 0; i < actions.length; i++) { %>
+            <div class="item">
+                <div><%= actions[i].mode %></div>
+                <div><%= actions[i].status %></div>
+                <div><%= actions[i].timeString %></div>
+                <form action="/delete?index=<%= i %>" method="post">
+                    <input type="submit" value="&#128465;" class="btn_red base_btn" />
+                </form>
+            </div>
+        <% } %>
+
+        <form action="/schedule" class="item" method="post">
+            <select name="mode" id="mode_selection">
+                <option value="one-shot">one shot</option>
+                <option value="daily">daily</option>
+            </select>
+            <select name="new-status">
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+            </select>
+            <input type="datetime-local" name="time" id="time_input" required/>
+            <input type="submit" value="+"  class="btn_green base_btn"/>
+        </form>
+    </div>
+    
+    <script src="homeApp.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+.items{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    padding: 5%;
+}
+
+.schedule-mg-t{
+    margin-top: 4rem;
+}
+
+.item{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(15, 15, 15);
+    padding: .4rem;
+}
+
+input{
+    height: 2rem;
+}
+
+select{
+    height: 2rem;
+}
+
+body{
+    background-color: rgb(15, 15, 15);
+}
+
+hr{
+    width: 100%;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    background-color: grey;
+    height: auto;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.v-center{
+    height: 50%;
+    margin: auto;
+}
+
+.base_btn{
+    width: 4rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    border-radius: 0%;
+    border-style: none;
+}
+
+.base_btn2{
+    width: 8rem;
+    height: 2rem;
+}
+
+.btn_light{
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.btn_dark{
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+
+.btn_red{
+    background-color: rgb(228, 37, 37);
+    color: white;
+}
+
+.btn_red:hover{
+    background-color: rgb(187, 30, 9);
+}
+
+.btn_green{
+    background-color: rgb(82, 204, 51);
+    color: white;
+}
+
+.btn_green:hover{
+    background-color: rgb(35, 153, 24);
+}
+
+@media only screen and (min-width: 600px){
+    .items{
+        width: 75%;
+    }
+    .schedule-mg-t{
+        margin-top: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .items{
+        width: 50%;
+    }
+    .schedule-mg-t{
+        margin-top: 1rem;
+    }
+}
